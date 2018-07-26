@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Hello from "./style";
+import Hello from './style';
 
 const Main = () => <Hello>Hello World!!</Hello>;
 
