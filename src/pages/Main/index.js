@@ -1,7 +1,15 @@
 import React from 'react';
 
-import Hello from './style';
+import Sidebar from '../../components/Sidebar';
+import Issues from '../../components/Issues';
 
-const Main = () => <Hello>Hello World!!</Hello>;
+import Container from './style';
+
+const Main = () => (
+  <Container>
+    <Sidebar />
+    <Issues />
+  </Container>
+);
 
 export default Main;
