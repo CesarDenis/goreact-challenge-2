@@ -1,50 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Container from './styles';
 
-const Repositories = () => (
+const RepositoriesList = ({ repositories, handleSelectRepository }) => (
   <Container>
-    <li>
-      <button>
-        <img src="https://avatars2.githubusercontent.com/u/29647600?v=4" alt="React Navigation" />
-        <div>
-          <p>react-navigation</p>
-          <small>React Navigation</small>
-        </div>
-        <i className="fa fa-angle-right" />
-      </button>
-    </li>
-    <li>
-      <button>
-        <img src="https://avatars3.githubusercontent.com/u/69631?v=4" alt="Facebook" />
-        <div>
-          <p>react</p>
-          <small>Facebook</small>
-        </div>
-        <i className="fa fa-angle-right" />
-      </button>
-    </li>
-    <li>
-      <button>
-        <img src="https://avatars1.githubusercontent.com/u/6128107?v=4" alt="vuejs" />
-        <div>
-          <p>vue</p>
-          <small>vuejs</small>
-        </div>
-        <i className="fa fa-angle-right" />
-      </button>
-    </li>
-    <li>
-      <button>
-        <img src="https://avatars1.githubusercontent.com/u/14294095?v=4" alt="Cesar Denis" />
-        <div>
-          <p>numerology-calculator</p>
-          <small>Cesar Denis</small>
-        </div>
-        <i className="fa fa-angle-right" />
-      </button>
-    </li>
+    {repositories.map(repository => (
+      <li key={repository.id}>
+        <button onClick={e => handleSelectRepository({ repository, e })}>
+          <img src={repository.owner.avatar_url} alt="{repository.owner.login}" />
+          <div>
+            <p>{repository.name}</p>
+            <small>{repository.owner.login}</small>
+          </div>
+          <i className="fa fa-angle-right" />
+        </button>
+      </li>
+    ))}
   </Container>
 );
 
-export default Repositories;
+RepositoriesList.propTypes = {
+  repositories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      owner: PropTypes.shape({
+        login: PropTypes.string,
+        avatar_url: PropTypes.string,
+      }),
+    })
+  ).isRequired,
+};
+
+export default RepositoriesList;

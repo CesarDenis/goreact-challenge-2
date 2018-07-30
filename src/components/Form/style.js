@@ -9,12 +9,13 @@ const Container = styled.form`
   input {
     background: #eee;
     border-radius: 3px;
-    border: 0;
     color: #999;
     flex: 1;
     font-size: 14px;
     height: 48px;
     padding: 0 20px;
+
+    border: ${props => (props.withError ? '2px solid #c02' : 0)};
   }
 
   button {
