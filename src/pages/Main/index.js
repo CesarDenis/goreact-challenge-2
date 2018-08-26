@@ -7,7 +7,7 @@ import Container from './style';
 
 class Main extends Component {
   state = {
-    repositorySelected: {},
+    repositorySelected: null,
   };
 
   handleSelectRepository = ({ repository, e }) => {
@@ -17,10 +17,11 @@ class Main extends Component {
   };
 
   render() {
+    const { repositorySelected } = this.state;
     return (
       <Container>
         <Sidebar handleSelectRepository={this.handleSelectRepository} />
-        <IssuesList repositorySelected={this.state.repositorySelected} />
+        <IssuesList repositorySelected={repositorySelected} />
       </Container>
     );
   }

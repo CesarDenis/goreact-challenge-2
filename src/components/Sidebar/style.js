@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Aside = styled.div`
-  height: 100vh;
+  height: 100%;
 
   background: #fff;
   width: 320px;
