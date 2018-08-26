@@ -17,32 +17,6 @@ const Container = styled.ul`
       width: 100%;
       text-align: left;
 
-      img {
-        border-radius: 3px;
-        height: 45px;
-        width: 45px;
-      }
-
-      div {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        justify-content: center;
-        padding: 0 10px;
-
-        p {
-          color: #333;
-          font-size: 16px;
-          font-weight: bold;
-          margin-bottom: 5px;
-        }
-
-        small {
-          color: #999;
-          font-size: 12px;
-        }
-      }
-
       i {
         color: #999;
         font-size: 16px;
