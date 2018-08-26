@@ -19,4 +19,8 @@ injectGlobal`
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
   }
+
+  html, body, #root {
+    height: 100%;
+  }
 `;
